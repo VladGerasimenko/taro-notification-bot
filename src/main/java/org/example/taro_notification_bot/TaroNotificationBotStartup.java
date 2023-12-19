@@ -14,7 +14,8 @@ public class TaroNotificationBotStartup {
         } else {
             ConfigReader configReader = new ConfigReader();
             Properties properties = configReader.get();
-            properties.put("bot.token", args[0]);
+            String botToken = args[0];
+            properties.put("bot.token", botToken);
             new TelegramBot(properties).initApi();
         }
     }
